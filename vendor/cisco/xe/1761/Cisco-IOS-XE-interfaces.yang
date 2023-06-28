@@ -598,7 +598,7 @@ submodule Cisco-IOS-XE-interfaces {
       default "aggregate";
     }
     leaf physical-interface {
-      must '/ios:native/ios:interface/*[concat(local-name(.), ios:name) = current()]';
+      // must '/ios:native/ios:interface/*[concat(local-name(.), ios:name) = current()]';
       type string;
     }
   }
@@ -1772,11 +1772,11 @@ submodule Cisco-IOS-XE-interfaces {
                   must "not (../../../../switchport-conf/switchport) or (../../../../switchport-conf/switchport = 'false')" {
                     error-message "To configure ip address, set switchport to false 1st; To change switchport from false to true, delete ip address 1st";
                   }
-                  must "(not (contains(../../../../ios:name,'.')) or (contains(../../../../ios:name,'.') and (../../../../encapsulation/dot1Q/vlan-id)))" {
-                    error-message
-                      "Configuring IP routing on a LAN subinterface is only allowed if that
-                        subinterface is already configured as part of an IEEE 802.10, IEEE 802.1Q, or ISL vLAN.";
-                  }
+                  // must "(not (contains(../../../../ios:name,'.')) or (contains(../../../../ios:name,'.') and (../../../../encapsulation/dot1Q/vlan-id)))" {
+                  //   error-message
+                  //     "Configuring IP routing on a LAN subinterface is only allowed if that
+                  //       subinterface is already configured as part of an IEEE 802.10, IEEE 802.1Q, or ISL vLAN.";
+                  // }
                   type inet:ipv4-address;
                 }
                 leaf mask {
@@ -2328,14 +2328,14 @@ submodule Cisco-IOS-XE-interfaces {
         leaf link-status-enable {
           description
             "UPDOWN and CHANGE messages";
-          when "not(contains(../../../ios:name,'.'))";
+          // when "not(contains(../../../ios:name,'.'))";
           type boolean;
           default "true";
         }
         leaf link-status {
           description
             "UPDOWN and CHANGE messages";
-          when "not(contains(../../../ios:name,'.'))";
+          // when "not(contains(../../../ios:name,'.'))";
           status deprecated;
           type empty;
         }

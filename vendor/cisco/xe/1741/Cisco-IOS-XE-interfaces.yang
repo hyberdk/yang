@@ -2240,14 +2240,14 @@ submodule Cisco-IOS-XE-interfaces {
         leaf link-status-enable {
           description
             "UPDOWN and CHANGE messages";
-          when "not(contains(../../../ios:name,'.'))";
+          // when "not(contains(../../../ios:name,'.'))";
           type boolean;
           default "true";
         }
         leaf link-status {
           description
             "UPDOWN and CHANGE messages";
-          when "not(contains(../../../ios:name,'.'))";
+          // when "not(contains(../../../ios:name,'.'))";
           status deprecated;
           type empty;
         }

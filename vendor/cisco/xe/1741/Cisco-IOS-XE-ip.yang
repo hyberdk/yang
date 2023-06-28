@@ -771,7 +771,7 @@ submodule Cisco-IOS-XE-ip {
               description
                 "MP2MP LSP root address";
               type inet:ipv4-address;
-              must "not (../p2mp = 'true')" {
+              must "not (../p2mp)" {
                 error-message
                   "%MVPN: Please unconfigure MLDP Rosen P2MP 
                    Profile in this address-family";
@@ -781,7 +781,7 @@ submodule Cisco-IOS-XE-ip {
               description
                 "Use a P2MP MLDP LSP to create the default MDT";
               type empty;
-              must "not (../mp2mp-root-address = 'true')" {
+              must "not (../mp2mp-root-address)" {
                 error-message
                   "%MVPN: Please unconfigure MLDP Rosen MP2MP 
                    Profile in this address-family";
@@ -1741,57 +1741,57 @@ submodule Cisco-IOS-XE-ip {
         type inet:ipv4-address;
         type string;
       }
-      must "not (starts-with(., 'Dialer')) or /ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]" {
-        error-message "Dialer interface must be created first and deleted last.";
-      }
-      must "not (starts-with(., 'Loopback')) or /ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]" {
-        error-message "Loopback interface must be created first and deleted last.";
-      }
-      must "not (starts-with(., 'Tunnel')) or /ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]" {
-        error-message "Tunnel interface must be created first and deleted last.";
-      }
-      must "not (starts-with(., 'Port-channel')) or /ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]" {
-        error-message "Port-channel interface must be created first and deleted last.";
-      }
-      must "not (starts-with(., 'Vlan')) or /ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]" {
-        error-message "Vlan interface must be created first and deleted last.";
-      }
-      must "not (starts-with(., 'LISP')) or /ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]" {
-        error-message "LISP interface must be created first and deleted last.";
-      }
-      must "not (starts-with(., 'Virtual-Template')) or /ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]" {
-        error-message "Virtual-Template interface must be created first and deleted last.";
-      }
-      must "not (starts-with(., 'BDI')) or /ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]" {
-        error-message "BDI interface must be created first and deleted last.";
-      }
-      must "not (starts-with(., 'Ethernet')) or /ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]" {
-        error-message "Ethernet interface must be created first and deleted last.";
-      }
-      must "not (starts-with(., 'FastEthernet')) or /ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]" {
-        error-message "FastEthernet interface must be created first and deleted last.";
-      }
-      must "not (starts-with(., 'GigabitEthernet')) or /ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]" {
-        error-message "GigabitEthernet interface must be created first and deleted last.";
-      }
-      must "not (starts-with(., 'TenGigabitEthernet')) or /ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]" {
-        error-message "TenGigabitEthernet interface must be created first and deleted last.";
-      }
-      must "not (starts-with(., 'FiveGigabitEthernet')) or /ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]" {
-        error-message "FiveGigabitEthernet interface must be created first and deleted last.";
-      }
-      must "not (starts-with(., 'TwentyFiveGigE')) or /ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]" {
-        error-message "TwentyFiveGigE interface must be created first and deleted last.";
-      }
-      must "not (starts-with(., 'TwoGigabitEthernet')) or /ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]" {
-        error-message "TwoGigabitEthernet interface must be created first and deleted last.";
-      }
-      must "not (starts-with(., 'FortyGigabitEthernet')) or /ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]" {
-        error-message "FortyGigabitEthernet interface must be created first and deleted last.";
-      }
-      must "not (starts-with(., 'HundredGigE')) or /ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]" {
-        error-message "HundredGigE interface must be created first and deleted last.";
-      }
+      // must "not (starts-with(., 'Dialer')) or /ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]" {
+      //   error-message "Dialer interface must be created first and deleted last.";
+      // }
+      // must "not (starts-with(., 'Loopback')) or /ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]" {
+      //   error-message "Loopback interface must be created first and deleted last.";
+      // }
+      // must "not (starts-with(., 'Tunnel')) or /ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]" {
+      //   error-message "Tunnel interface must be created first and deleted last.";
+      // }
+      // must "not (starts-with(., 'Port-channel')) or /ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]" {
+      //   error-message "Port-channel interface must be created first and deleted last.";
+      // }
+      // must "not (starts-with(., 'Vlan')) or /ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]" {
+      //   error-message "Vlan interface must be created first and deleted last.";
+      // }
+      // must "not (starts-with(., 'LISP')) or /ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]" {
+      //   error-message "LISP interface must be created first and deleted last.";
+      // }
+      // must "not (starts-with(., 'Virtual-Template')) or /ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]" {
+      //   error-message "Virtual-Template interface must be created first and deleted last.";
+      // }
+      // must "not (starts-with(., 'BDI')) or /ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]" {
+      //   error-message "BDI interface must be created first and deleted last.";
+      // }
+      // must "not (starts-with(., 'Ethernet')) or /ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]" {
+      //   error-message "Ethernet interface must be created first and deleted last.";
+      // }
+      // must "not (starts-with(., 'FastEthernet')) or /ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]" {
+      //   error-message "FastEthernet interface must be created first and deleted last.";
+      // }
+      // must "not (starts-with(., 'GigabitEthernet')) or /ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]" {
+      //   error-message "GigabitEthernet interface must be created first and deleted last.";
+      // }
+      // must "not (starts-with(., 'TenGigabitEthernet')) or /ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]" {
+      //   error-message "TenGigabitEthernet interface must be created first and deleted last.";
+      // }
+      // must "not (starts-with(., 'FiveGigabitEthernet')) or /ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]" {
+      //   error-message "FiveGigabitEthernet interface must be created first and deleted last.";
+      // }
+      // must "not (starts-with(., 'TwentyFiveGigE')) or /ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]" {
+      //   error-message "TwentyFiveGigE interface must be created first and deleted last.";
+      // }
+      // must "not (starts-with(., 'TwoGigabitEthernet')) or /ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]" {
+      //   error-message "TwoGigabitEthernet interface must be created first and deleted last.";
+      // }
+      // must "not (starts-with(., 'FortyGigabitEthernet')) or /ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]" {
+      //   error-message "FortyGigabitEthernet interface must be created first and deleted last.";
+      // }
+      // must "not (starts-with(., 'HundredGigE')) or /ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]" {
+      //   error-message "HundredGigE interface must be created first and deleted last.";
+      // }
     }
   }
 
