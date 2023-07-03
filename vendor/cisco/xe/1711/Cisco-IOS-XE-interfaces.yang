@@ -2392,11 +2392,11 @@ submodule Cisco-IOS-XE-interfaces {
         default "force-authorized";
       }
       container port-control {
-        status deprecated;
+        status obsolete;
         description
           "Set the port-control value. DEPRECATED, use port-control-config instead";
         leaf auto {
-          status deprecated;
+          status obsolete;
           description
             "PortState set to automatic";
           type empty;
@@ -2412,11 +2412,11 @@ submodule Cisco-IOS-XE-interfaces {
         default "both";
       }
       container control-direction {
-        status deprecated;
+        status obsolete;
         description
           "Set the control-direction on the interface (DEPRECATED, use control-direction-config)";
         leaf in {
-          status deprecated;
+          status obsolete;
           description
             "Control inbound traffic only";
           type empty;
