@@ -73,9 +73,9 @@ module Cisco-IOS-XE-device-tracking {
         description
           "Apply a policy for feature device-tracking";
         type string;
-        must "(/ios:native/ios:device-tracking/ios-dt:policy[ios-dt:word=current()])" {
-          error-message "Create policy first, then attach policy; Detach policy first then remove policy";
-        }
+        // must "(/ios:native/ios:device-tracking/ios-dt:policy[ios-dt:word=current()])" {
+        //   error-message "Create policy first, then attach policy; Detach policy first then remove policy";
+        // }
       }
     }
   }
@@ -91,9 +91,9 @@ module Cisco-IOS-XE-device-tracking {
           "Obsolete - Apply a policy for feature device-tracking";
         status obsolete;
         type string;
-        must "(/ios:native/ios:device-tracking/ios-dt:policy[ios-dt:word=current()])" {
-          error-message "Create policy first, then attach policy; Detach policy first then remove policy";
-        }
+        // must "(/ios:native/ios:device-tracking/ios-dt:policy[ios-dt:word=current()])" {
+        //   error-message "Create policy first, then attach policy; Detach policy first then remove policy";
+        // }
       }
     }
   }
