@@ -539,7 +539,7 @@ module Cisco-IOS-XE-isis {
           leaf interface {
             description
               "Interface name";
-            must "/ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]";
+            // must "/ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]";
             type string;
           }
         }
@@ -1510,7 +1510,7 @@ module Cisco-IOS-XE-isis {
     leaf router-id {
       description
         "Interface of stable IP address for system";
-      must "/ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]";
+      // must "/ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]";
       type string;
     }
   }
@@ -1690,7 +1690,7 @@ module Cisco-IOS-XE-isis {
           type string;
         }
         leaf interface {
-          must "/ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]";
+          // must "/ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]";
           type string;
         }
         leaf in {
@@ -2156,7 +2156,7 @@ module Cisco-IOS-XE-isis {
       list distribute-list {
         key "interface";
         leaf interface {
-          must "/ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]";
+          // must "/ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]";
           type string;
         }
         choice list-types {
@@ -2183,7 +2183,7 @@ module Cisco-IOS-XE-isis {
         }
       }
       container acl {
-        when "not(../gateway-or-prefix/options) and not(../route-map/name)";
+        // when "not(../gateway-or-prefix/options) and not(../route-map/name)";
         leaf acl-name {
           type ios-types:access-list-standard-id-type-non-default;
         }
@@ -2194,7 +2194,7 @@ module Cisco-IOS-XE-isis {
         }
       }
       container gateway-or-prefix {
-        when "not(../route-map/name) and not(../acl/acl-name)";
+        // when "not(../route-map/name) and not(../acl/acl-name)";
         leaf options {
           type enumeration {
             enum "gateway";
@@ -2213,7 +2213,7 @@ module Cisco-IOS-XE-isis {
         }
       }
       container route-map {
-        when "not(../gateway-or-prefix/options) and not(../acl/acl-name)";
+        // when "not(../gateway-or-prefix/options) and not(../acl/acl-name)";
         leaf name {
           description
             "Filter prefixes based on the route-map";
@@ -2696,7 +2696,7 @@ module Cisco-IOS-XE-isis {
         leaf router-id {
           description
             "Traffic Engineering stable IP address for system";
-          must "/ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]";
+          // must "/ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]";
           type string;
         }
         container scanner {
@@ -2842,13 +2842,13 @@ module Cisco-IOS-XE-isis {
           type empty;
         }
         leaf-list interface {
-          must "/ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]";
-          must "not(/ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]/ios:ip/ios:router/isis)" {
-            error-message "ip router isis must not be present";
-          }
-          must "not(/ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]/ios:ipv6/ios:router/isis)" {
-            error-message "ipv6 router isis must not be present";
-          }
+          // must "/ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]";
+          // must "not(/ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]/ios:ip/ios:router/isis)" {
+          //   error-message "ip router isis must not be present";
+          // }
+          // must "not(/ios:native/ios:interface/*[concat(local-name(), ios:name) = current()]/ios:ipv6/ios:router/isis)" {
+          //   error-message "ipv6 router isis must not be present";
+          // }
           type string;
         }
       }
