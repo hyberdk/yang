@@ -511,7 +511,7 @@ module Cisco-IOS-XE-switch {
         leaf name {
           description
             "Vlan name, deprecated";
-          status deprecated;
+          status obsolete;
           type string;
         }
       }
@@ -658,17 +658,17 @@ module Cisco-IOS-XE-switch {
           }
         }
         container maximum {
-          status deprecated;
+          status obsolete;
           description
             "Max secure addresses";
           leaf max-addresses {
-            status deprecated;
+            status obsolete;
             type uint16 {
               range "1..4097";
             }
           }
           leaf vlan {
-            status deprecated;
+            status obsolete;
             description
               "Max secure addresses per vlan";
             type string;
@@ -702,22 +702,22 @@ module Cisco-IOS-XE-switch {
       }
     }
     container port-security {
-      status deprecated;
+      status obsolete;
       description
         "Security related command";
       presence "true";
       container aging {
-        status deprecated;
+        status obsolete;
         description
           "Port-security aging commands";
         leaf static {
-          status deprecated;
+          status obsolete;
           description
             "Enable aging for configured secure addresses";
           type empty;
         }
         leaf time {
-          status deprecated;
+          status obsolete;
           description
             "Port-security aging time";
           type uint16 {
@@ -725,7 +725,7 @@ module Cisco-IOS-XE-switch {
           }
         }
         leaf type {
-          status deprecated;
+          status obsolete;
           description
             "Port-security aging type";
           type enumeration {
@@ -735,21 +735,21 @@ module Cisco-IOS-XE-switch {
         }
       }
       container mac-address {
-        status deprecated;
+        status obsolete;
         description
           "Secure mac address";
         leaf sticky {
-          status deprecated;
+          status obsolete;
           description
             "Configure dynamic secure addresses as sticky";
           type empty;
         }
         leaf hw-address {
-          status deprecated;
+          status obsolete;
           type yang:mac-address;
         }
         leaf vlan {
-          status deprecated;
+          status obsolete;
           description
             "set VLAN ID of the VLAN on which this address can be learned";
           type uint16 {
@@ -758,24 +758,24 @@ module Cisco-IOS-XE-switch {
         }
       }
       container maximum {
-        status deprecated;
+        status obsolete;
         description
           "Max secure addresses";
         leaf max-addresses {
-          status deprecated;
+          status obsolete;
           type uint16 {
             range "1..4097";
           }
         }
         leaf vlan {
-          status deprecated;
+          status obsolete;
           description
             "Max secure addresses per vlan";
           type string;
         }
       }
       leaf violation {
-        status deprecated;
+        status obsolete;
         type enumeration {
           enum "protect";
           enum "restrict";
@@ -800,7 +800,7 @@ module Cisco-IOS-XE-switch {
               }
             }
             leaf all {
-              status deprecated;
+              status obsolete;
               description
                 "all VLANs";
               type empty;
@@ -1085,13 +1085,13 @@ module Cisco-IOS-XE-switch {
           type string;
         }
         leaf add {
-          status deprecated;
+          status obsolete;
           description
             "Secondary VLAN IDs of the private VLAN promiscuous port mapping";
           type string;
         }
         leaf remove {
-          status deprecated;
+          status obsolete;
           description
             "Secondary VLAN IDs of the private VLAN promiscuous port mapping";
           type string;
@@ -2779,9 +2779,9 @@ module Cisco-IOS-XE-switch {
     uses ios-dt:config-interface-switchport-device-tracking-grouping;
   }
   augment "/ios:native/ios:interface/ios:TwentyFiveGigabitEthernet/ios:switchport" {
-    status deprecated;
+    status obsolete;
     uses config-interface-switchport-grouping {
-      status deprecated;
+      status obsolete;
     }
   }
   augment "/ios:native/ios:interface/ios:TwentyFiveGigE/ios:switchport" {
@@ -2825,9 +2825,9 @@ module Cisco-IOS-XE-switch {
     uses ios-dt:config-interface-device-tracking-grouping;
   }
   augment "/ios:native/ios:interface/ios:TwentyFiveGigabitEthernet" {
-    status deprecated;
+    status obsolete;
     uses config-interface-switch-grouping {
-      status deprecated;
+      status obsolete;
     }
   }
   augment "/ios:native/ios:interface/ios:TwentyFiveGigE" {
