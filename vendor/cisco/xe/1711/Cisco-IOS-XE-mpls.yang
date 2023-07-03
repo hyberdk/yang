@@ -642,7 +642,7 @@ module Cisco-IOS-XE-mpls {
     leaf sticky {
       description
         "Stay on the same path after change in required resources";
-      when "(count(..[lockdown]) = 1)";
+      when "../lockdown";
       type empty;
     }
   }
@@ -681,13 +681,13 @@ module Cisco-IOS-XE-mpls {
     leaf address {
       description
         "PCE IPv4 address";
-      when "(count(..[pce]) = 1)";
+      when "../pce";
       type inet:ipv4-address;
     }
     leaf verbatim {
       description
         "Do not validate links from the ERO object";
-      when "(count(..[pce]) = 1)";
+      when "../pce";
       type empty;
     }
   }
@@ -2552,7 +2552,7 @@ module Cisco-IOS-XE-mpls {
         leaf label {
           description
             "MPLS label (depends on the configured static label range)";
-          must ". >= /ios:native/ios:mpls/ios-mpls:label/ios-mpls:range/ios-mpls:static/ios-mpls:min and . <= /ios:native/ios:mpls/ios-mpls:label/ios-mpls:range/ios-mpls:static/ios-mpls:max";
+          // must ". >= /ios:native/ios:mpls/ios-mpls:label/ios-mpls:range/ios-mpls:static/ios-mpls:min and . <= /ios:native/ios:mpls/ios-mpls:label/ios-mpls:range/ios-mpls:static/ios-mpls:max";
           type uint32 {
             range "16..1048575";
           }

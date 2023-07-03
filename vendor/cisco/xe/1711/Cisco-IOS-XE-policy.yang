@@ -549,9 +549,9 @@ module Cisco-IOS-XE-policy {
           description
             "rewrite packet precedence and send it";
           type ios-types:prec_value-type;
-          must "not ((../../../conform-set-dscp-transmit/conform-action/set-dscp-transmit) or(../../../exceed-set-dscp-transmit/exceed-action/set-dscp-transmit) or (../../../violate-set-dscp-transmit/violate-action/set-dscp-transmit)) " {
-            error-message "Two layer 3 markings (dscp and precedence) are not allowed";
-          }
+          // must "not ((../../../conform-set-dscp-transmit/conform-action/set-dscp-transmit) or(../../../exceed-set-dscp-transmit/exceed-action/set-dscp-transmit) or (../../../violate-set-dscp-transmit/violate-action/set-dscp-transmit)) " {
+          //   error-message "Two layer 3 markings (dscp and precedence) are not allowed";
+          // }
         }
       }
     }

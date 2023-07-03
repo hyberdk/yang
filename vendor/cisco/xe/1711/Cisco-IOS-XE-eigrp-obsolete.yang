@@ -23,14 +23,14 @@ submodule Cisco-IOS-XE-eigrp-obsolete {
 
   grouping eigrp-af-topo-redist-grouping {
     container route-map {
-      status deprecated;
+      status obsolete;
       description
         "Filter prefixes based on the route-map";
       list rmap-name {
-        status deprecated;
+        status obsolete;
         key "rmap-name";
         leaf rmap-name {
-          status deprecated;
+          status obsolete;
           description
             "route-map name";
           type string;
@@ -144,7 +144,7 @@ submodule Cisco-IOS-XE-eigrp-obsolete {
     container eigrp {
       status obsolete;
       description
-        "Interface command for IPv6 EIGRP. (DEPRECATED, use router-eigrp)";
+        "Interface command for IPv6 EIGRP. (obsolete, use router-eigrp)";
       leaf as-number {
         status obsolete;
         type uint16;
@@ -154,11 +154,11 @@ submodule Cisco-IOS-XE-eigrp-obsolete {
 
   grouping eigrp-topology-base-grouping {
     container topology {
-      status deprecated;
+      status obsolete;
       description
         "Topology configuration mode";
       container base {
-        status deprecated;
+        status obsolete;
         description
           "Base Topology";
         presence "true";
@@ -193,17 +193,17 @@ submodule Cisco-IOS-XE-eigrp-obsolete {
           }
         }
         container table-map {
-          status deprecated;
+          status obsolete;
           description
             "Define Table-Map for setting OMP-TAG into routing table";
           leaf name {
-            status deprecated;
+            status obsolete;
             description
               "WORD;;route-map name";
             type string;
           }
           leaf filter {
-            status deprecated;
+            status obsolete;
             description
               "Selective route download";
             type empty;
@@ -267,7 +267,7 @@ submodule Cisco-IOS-XE-eigrp-obsolete {
           }
         }
         container redistribute {
-          status deprecated;
+          status obsolete;
           description
             "Redistribute IPv6 prefixes from another routing protocol";
           container eigrp {
@@ -289,7 +289,7 @@ submodule Cisco-IOS-XE-eigrp-obsolete {
             }
           }
           container omp {
-            status deprecated;
+            status obsolete;
             if-feature "ios-features:omp";
             description
               "Overlay Management Protocol (OMP)";
@@ -297,18 +297,18 @@ submodule Cisco-IOS-XE-eigrp-obsolete {
             uses eigrp-af-topo-redist-grouping;
           }
           container nat-route {
-            status deprecated;
+            status obsolete;
             if-feature "ios-features:sdwan";
             description
               "NAT Route";
             leaf dia {
-              status deprecated;
+              status obsolete;
               description
                 "Redistribute NAT Direct Internet Access routes";
               type empty;
             }
             leaf outside {
-              status deprecated;
+              status obsolete;
               description
                 "Redistribute NAT Outside routes";
               type empty;
@@ -316,11 +316,11 @@ submodule Cisco-IOS-XE-eigrp-obsolete {
             uses eigrp-af-topo-redist-grouping;
           }
           container ospf {
-            status deprecated;
+            status obsolete;
             description
               "Open Shortest Path First (OSPFv3)";
             leaf process-id {
-              status deprecated;
+              status obsolete;
               description
                 "Process ID";
               type uint16 {
@@ -330,25 +330,25 @@ submodule Cisco-IOS-XE-eigrp-obsolete {
             uses eigrp-af-topo-redist-grouping;
           }
           container connected {
-            status deprecated;
+            status obsolete;
             description
               "Connected Routes";
             presence "true";
             uses eigrp-af-topo-redist-grouping;
           }
           container static {
-            status deprecated;
+            status obsolete;
             description
               "Static Routes";
             presence "true";
             uses eigrp-af-topo-redist-grouping;
           }
           container bgp {
-            status deprecated;
+            status obsolete;
             description
               "Border Gateway Protocol (BGP)";
             leaf as-number {
-              status deprecated;
+              status obsolete;
               type ios-types:bgp-as-number-type;
             }
             uses eigrp-af-topo-redist-grouping;
@@ -423,12 +423,12 @@ submodule Cisco-IOS-XE-eigrp-obsolete {
 
   grouping eigrp-address-family-grouping {
     list af-interface {
-      status deprecated;
+      status obsolete;
       description
         "Enter Address Family interface configuration";
       key "name";
       leaf name {
-        status deprecated;
+        status obsolete;
         type string;
       }
       leaf bandwidth-percent {
@@ -440,37 +440,37 @@ submodule Cisco-IOS-XE-eigrp-obsolete {
         }
       }
       leaf shutdown {
-        status deprecated;
+        status obsolete;
         description
           "Shutdown this interface of EIGRP";
         type empty;
       }
       leaf bfd {
-        status deprecated;
+        status obsolete;
         description
           "set peer monitoring method to bfd";
         type empty;
       }
       leaf hello-interval {
-        status deprecated;
+        status obsolete;
         description
           "Configures hello interval";
         type uint16;
       }
       leaf hold-time {
-        status deprecated;
+        status obsolete;
         description
           "Configures hold time";
         type uint16;
       }
       leaf passive-interface {
-        status deprecated;
+        status obsolete;
         description
           "Suppress address updates on an interface";
         type boolean;
       }
       leaf split-horizon {
-        status deprecated;
+        status obsolete;
         description
           "Perform split horizon";
         type boolean;
@@ -487,45 +487,45 @@ submodule Cisco-IOS-XE-eigrp-obsolete {
         }
       }
       container authentication {
-        status deprecated;
+        status obsolete;
         description
           "authentication subcommands";
         container mode {
-          status deprecated;
+          status obsolete;
           description
             "authentication mode";
           leaf md5 {
-            status deprecated;
+            status obsolete;
             description
               "Keyed message digest";
             type empty;
           }
           container hmac-sha-256 {
-            status deprecated;
+            status obsolete;
             description
               "HMAC-SHA-256 Authentication";
             leaf auth-type {
-              status deprecated;
+              status obsolete;
               type uint8;
             }
             leaf auth-key {
-              status deprecated;
+              status obsolete;
               type string;
             }
           }
         }
         leaf key-chain {
-          status deprecated;
+          status obsolete;
           description
             "key-chain";
           type string;
         }
       }
       list summary-address {
-        status deprecated;
+        status obsolete;
         key "prefix";
         leaf prefix {
-          status deprecated;
+          status obsolete;
           type union {
             type inet:ipv4-prefix;
             type ios-types:ipv6-prefix;
@@ -543,7 +543,7 @@ submodule Cisco-IOS-XE-eigrp-obsolete {
       }
     }
     leaf auto-summary {
-      status deprecated;
+      status obsolete;
       description
         "Enable automatic network number summarization";
       type empty;
@@ -834,11 +834,11 @@ submodule Cisco-IOS-XE-eigrp-obsolete {
       }
     }
     container eigrp {
-      status deprecated;
+      status obsolete;
       description
         "EIGRP Address Family specific commands";
       leaf router-id {
-        status deprecated;
+        status obsolete;
         description
           "router id for this EIGRP process";
         type inet:ipv4-address;
@@ -945,18 +945,18 @@ submodule Cisco-IOS-XE-eigrp-obsolete {
       }
     }
     list network {
-      status deprecated;
+      status obsolete;
       description
         "Enable routing on an IP network";
       key "number";
       leaf number {
-        status deprecated;
+        status obsolete;
         description
           "Network number";
         type inet:ipv4-address;
       }
       leaf wild-card {
-        status deprecated;
+        status obsolete;
         description
           "EIGRP wild card bits";
         type inet:ipv4-address;
@@ -1394,14 +1394,14 @@ submodule Cisco-IOS-XE-eigrp-obsolete {
   }
 
   grouping config-router-eigrp-grouping {
-    status deprecated;
+    status obsolete;
     list eigrp {
-      status deprecated;
+      status obsolete;
       description
-        "Enhanced Interior Gateway Routing Protocol (EIGRP) (DEPRECATED, use router-eigrp)";
+        "Enhanced Interior Gateway Routing Protocol (EIGRP) (obsolete, use router-eigrp)";
       key "id";
       leaf id {
-        status deprecated;
+        status obsolete;
         description
           "Autonomous System ID";
         type union {
@@ -1445,12 +1445,12 @@ submodule Cisco-IOS-XE-eigrp-obsolete {
         }
       }
       list address-family {
-        status deprecated;
+        status obsolete;
         description
           "Enter Address Family command mode";
         key "type";
         leaf type {
-          status deprecated;
+          status obsolete;
           type enumeration {
             enum "ipv4";
             enum "ipv6";
@@ -1480,26 +1480,26 @@ submodule Cisco-IOS-XE-eigrp-obsolete {
           uses eigrp-topology-base-grouping;
         }
         list af-ip-vrf-list {
-          status deprecated;
+          status obsolete;
           description
             "Address family IPv4/IPv6 VRF";
           key "vrf";
           leaf vrf {
-            status deprecated;
+            status obsolete;
             must "/ios:native/ios:vrf/ios:definition[ios:name=current()] or /ios:native/ios:ip/ios:vrf[ios:name=current()]" {
               error-message "VRF must be created 1st, deleted last";
             }
             type string;
           }
           leaf unicast-multicast {
-            status deprecated;
+            status obsolete;
             type enumeration {
               enum "unicast";
               enum "multicast";
             }
           }
           leaf autonomous-system {
-            status deprecated;
+            status obsolete;
             description
               "Specify Address-Family Autonomous System Number?";
             type uint16;

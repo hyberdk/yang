@@ -346,9 +346,9 @@ module Cisco-IOS-XE-tunnel {
           leaf output {
             description
               "apply QoS service policy in the output direction";
-            must "(/ios:native/ios:policy/ios-policy:policy-map[ios-policy:name = current()])" {
-              error-message "Warning: This control policy-map does not exist";
-            }
+            // must "(/ios:native/ios:policy/ios-policy:policy-map[ios-policy:name = current()])" {
+            //   error-message "Warning: This control policy-map does not exist";
+            // }
             type string;
           }
         }

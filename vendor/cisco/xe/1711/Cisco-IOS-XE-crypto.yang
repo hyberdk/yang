@@ -23,6 +23,9 @@ module Cisco-IOS-XE-crypto {
   import Cisco-IOS-XE-tunnel {
     prefix ios-tun;
   }
+  import Cisco-IOS-XE-policy {
+    prefix ios-policy;
+  }
 
   organization
     "Cisco Systems, Inc.";
@@ -4433,9 +4436,9 @@ module Cisco-IOS-XE-crypto {
         description
           "Specify Proposal";
         key "proposals";
-        must "/ios:native/ios:crypto/ikev2/proposal[name=current()]" {
-          error-message "It seems IKEv2 proposal doesn't exist or attempted to delete when actively referred by IKEv2 policy";
-        }
+        // must "/ios:native/ios:crypto/ikev2/proposal[name=current()]" {
+        //   error-message "It seems IKEv2 proposal doesn't exist or attempted to delete when actively referred by IKEv2 policy";
+        // }
         leaf proposals {
           type string;
         }
@@ -4996,10 +4999,12 @@ module Cisco-IOS-XE-crypto {
           enum "esp-gmac";
           enum "esp-null";
           enum "esp-seal";
+          enum "esp-192-aes";
+          enum "esp-256-aes";
         }
       }
       leaf key-bit {
-        when "../esp != 'esp-3des' and ../esp != 'esp-des' and ../esp != 'esp-null' and ../esp != 'esp-seal' and ../esp !=   'esp-192-aes' and ../esp != 'esp-256-aes'";
+        when "../esp != 'esp-3des' and ../esp != 'esp-des' and ../esp != 'esp-null' and ../esp != 'esp-seal' and ../esp != 'esp-192-aes' and ../esp != 'esp-256-aes'";
         type enumeration {
           enum "128";
           enum "192";
@@ -9774,6 +9779,7 @@ module Cisco-IOS-XE-crypto {
               }
             }
             list configuration-respond {
+              status obsolete;
               key "name";
               leaf name {
                 status obsolete;
@@ -11133,7 +11139,7 @@ module Cisco-IOS-XE-crypto {
           "Determine the ipsec policy profile to use.";
         status deprecated;
         must "/ios:native/ios:crypto/ipsec/profile[name=current()]" {
-          error-message "It seems IPSec profile doesn't exist or attempting to remove when referred by tunnel config";
+        //   error-message "It seems IPSec profile doesn't exist or attempting to remove when referred by tunnel config";
         }
         type string;
       }
